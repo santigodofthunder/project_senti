@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>
+{% if review %}
+The sentiment is {{review}}
+Update the review in the form below:
+{% else %}
+Please enter the review:
+{% endif %}
+</p>
+
+<form  method="post">
+  {{form.hidden_tag()}}
+  {{form.review.label}}{{form.review}}
+  {{form.submit()}}
+</form>
+
+{% endblock %}
